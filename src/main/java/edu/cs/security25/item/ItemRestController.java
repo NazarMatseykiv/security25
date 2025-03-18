@@ -22,4 +22,19 @@ public class ItemRestController {
 
     @DeleteMapping("/{id}")
     public void deleteItem(@PathVariable String id) { itemService.deleteItem(id); }
+
+    @GetMapping("/welcome/user")
+    public String welcomeUser() {
+        return "Welcome User!";
+    }
+
+    @GetMapping("welcome/admin")
+    public String welcomeAdmin() {
+        return "Welcome Admin!";
+    }
+
+    @GetMapping("welcome/guest")
+    public String welcomeGuest() {
+        return "Welcome Guest!";
+    }
 }
