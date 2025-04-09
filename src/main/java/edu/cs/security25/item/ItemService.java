@@ -1,14 +1,19 @@
 package edu.cs.security25.item;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
+import java.util.ArrayList;
 
 @Service
 public class ItemService {
     @Autowired
     private ItemRepository itemRepository;
+    private List<Item> items = new ArrayList<>();
+    @Autowired
+    private ItemRepository repository;
 
     public List<Item> getAllItems() { return itemRepository.findAll(); }
     public Optional<Item> getItemById(String id) { return itemRepository.findById(id); }

@@ -10,7 +10,7 @@ public class Item {
     private String name;
     private double price;
 
-    public Item() {}
+    public Item(String number, String name1, String desc) {}
 
     public Item(String name, double price) {
         this.name = name;
