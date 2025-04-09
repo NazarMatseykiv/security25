@@ -2,13 +2,18 @@ package edu.cs.security25.item;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import jakarta.annotation.PostConstruct;
 import java.util.List;
 import java.util.Optional;
+import java.util.ArrayList;
 
 @Service
 public class ItemService {
     @Autowired
     private ItemRepository itemRepository;
+    private List<Item> items = new ArrayList<>();
+    @Autowired
+    private ItemRepository repository;
 
     public List<Item> getAllItems() { return itemRepository.findAll(); }
     public Optional<Item> getItemById(String id) { return itemRepository.findById(id); }
@@ -16,9 +21,9 @@ public class ItemService {
     public void deleteItem(String id) { itemRepository.deleteById(id); }
     @PostConstruct
     void init() {
-        items.add(new Item("1", "name1", "desc"));
-        items.add(new Item("2", "name2", "desc2"));
-        items.add(new Item("3", "name3", "desc3"));
+        items.add(new Item("1", 12));
+        items.add(new Item("2", 13));
+        items.add(new Item("3", 14));
         repository.saveAll(items);
     }
 
