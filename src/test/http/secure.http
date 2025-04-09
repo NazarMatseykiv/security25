@@ -4,7 +4,7 @@ Authorization: Basic admin admin
 Accept: application/json
 ###
 
-### GET ALL ITEMS USERZ
+### GET ALL ITEMS USERS
 GET http://localhost:8080/api/v1/items
 Authorization: Basic user user
 Accept: application/json
